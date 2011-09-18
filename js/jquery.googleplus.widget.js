@@ -53,15 +53,16 @@
 		    if( target.trigger('gplus_data', [res]) ) {
 			$.each(res.items.reverse(), function() {
 			    if( !target.find('.gplus-item-'+this.id).length ) {
-				target.prepend(
-				    '<div class="gplus-item-'+this.id+'">'+
+				var item = $(
+				    '<div style="display:none" class="gplus-item gplus-item-'+this.id+'">'+
 					'<a class="actor" href="'+this.actor.url+'"><img src="'+this.actor.image.url+'" /></a>' +
 					'<span class="message"><a href="'+this.url+'">'+
 					this.title+
 					'</a></span>'+
 					'<span class="meta">'+prettyDate(this.published)+'</span>'+
 				'</div>');
-				console.log(this);
+				target.prepend(item);
+				item.show('fast');
 			    }
 			});
 		    }
