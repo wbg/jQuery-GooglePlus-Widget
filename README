@@ -7,3 +7,5 @@ Setup is really simple:
   $(function() {
   	       $('#target').googleplusWidget({api_key:'API KEY',user_id:'USER ID'}).trigger('start_gplus');
   });
+
+http://roman.tao.at/dev/jquery/jquery-googleplus-widget
